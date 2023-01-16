@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Hero mage = new Mage("Vigdis");
         mage.display();
+        String name = mage.getName();
     }
 
 }

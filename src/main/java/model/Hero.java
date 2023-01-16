@@ -7,8 +7,13 @@ import model.exceptions.InvalidWeaponException;
 import java.util.EnumMap;
 import java.util.List;
 
+/**
+ * Abstract class used for every hero in the game.
+ * Field variables and methods shared between all classes are defined here.
+ * The class is abstract as every hero object within the game has to belong to a specific class.
+ */
 public abstract class Hero {
-    private String name;        // Name of hero
+    private final String name;  // Name of hero
     protected String className; // Name of class
     protected int level;        // Current hero level
     protected Attribute damagingAttribute;  // Damaging attribute based on hero class
@@ -27,6 +32,10 @@ public abstract class Hero {
         this.equipment.put(Slot.HEAD, null);
         this.equipment.put(Slot.BODY, null);
         this.equipment.put(Slot.LEGS, null);
+    }
+
+    public String getName(){
+        return name;
     }
 
     /**
@@ -80,7 +89,7 @@ public abstract class Hero {
             weaponDamage = weapon.getWeaponDamage();
         }
         double damage = weaponDamage;
-        switch (damagingAttribute){
+        switch (damagingAttribute){ // Select attribute multiplier based on class
             case STRENGTH -> damage *= (1 + 0.01*totalAttributes().getStrength());
             case DEXTERITY -> damage *= (1 + 0.01*totalAttributes().getDexterity());
             case INTELLIGENCE -> damage *= (1 + 0.01*totalAttributes().getIntelligence());
@@ -98,7 +107,7 @@ public abstract class Hero {
         // Add attributes from armor iteratively
         for (Item item : equipment.values()){
             if (item != null && item.getSlot() != Slot.WEAPON){ // Ignore weapon and empty slots
-                Armor armor = (Armor) item;
+                Armor armor = (Armor) item; // Cast to Armor to get subclass functionality
                 totalAttributes.increaseAttributes(armor.getArmorAttributes());
             }
         }
