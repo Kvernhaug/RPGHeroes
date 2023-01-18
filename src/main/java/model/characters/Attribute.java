@@ -1,4 +1,4 @@
-package model;
+package model.characters;
 
 public enum Attribute {
     STRENGTH,

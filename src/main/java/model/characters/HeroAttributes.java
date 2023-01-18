@@ -1,4 +1,4 @@
-package model;
+package model.characters;
 
 /**
  * Class used to handle all the attributes a hero has

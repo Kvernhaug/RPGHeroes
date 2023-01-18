@@ -1,4 +1,4 @@
-package model.equipment;
+package model.items;
 
 /**
  * Abstract class used for equipment in the game.
@@ -13,6 +13,10 @@ public abstract class Item {
         this.name = name;
         this.requiredLevel = requiredLevel;
         this.slot = slot;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getRequiredLevel(){

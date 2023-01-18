@@ -1,4 +1,4 @@
-package model.equipment;
+package model.items;
 
 /**
  * Class used to represent weapons in the game

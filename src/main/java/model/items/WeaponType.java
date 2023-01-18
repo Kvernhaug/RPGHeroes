@@ -1,4 +1,4 @@
-package model.equipment;
+package model.items;
 
 public enum WeaponType {
     AXE,
