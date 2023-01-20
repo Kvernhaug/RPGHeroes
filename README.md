@@ -38,7 +38,7 @@ in separate classes, but it sort of pointless as those classes ended
 up with only a constructor, since every method worked the same for every class.
 
 
-### Items
+#### Items
 
 In this package, the different items within the game are handled.
 The items in the game can either be weapons or armor, represented by the
@@ -47,7 +47,7 @@ which has the shared characteristics between the two item classes.
 The *WeaponType* and *ArmorType* enumerators define their respective
 types, dictating which classes can use them. 
 
-### Equipment
+#### Equipment
 
 The equipment package handles equipment worn by a hero. The 
 *Equipment* class is a callable object that can hold onto an item
